@@ -1,8 +1,8 @@
 {
-  "//1": "describes your app and its dependencies",
+  "//1": "POLAPP",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "hello-sqlite",
+  "name": "polapp",
   "version": "0.0.1",
   "description": "A simple Node app with SQLite as a database management system, instantly up and running.",
   "main": "server.js",
@@ -17,7 +17,7 @@
     "node": "12.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-sqlite"
+    "url": "https://glitch.com/edit/#!/polapp"
   },
   "license": "MIT",
   "keywords": [
