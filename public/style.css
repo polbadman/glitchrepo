@@ -9,6 +9,7 @@ body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
   direction:rtl;
+  
 }
 
 h1 {
@@ -69,4 +70,16 @@ footer {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid lightgrey;
+}
+.polcard{
+   margin:auto;
+   diplay:block;
+   text-align:center;
+  background:pink;
+  border-radius:2%;
+  padding:10px;
+  wid
+}
+.polright{
+  text-align:right;
 }

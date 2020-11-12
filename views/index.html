@@ -1,51 +1,60 @@
 <!-- This is a static file -->
 <!-- served from your routes in server.js -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A cool thing made with Glitch">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A cool thing made with Glitch" />
 
     <title>به برنامه خوش آمدید</title>
 
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- import the webpage's client-side javascript file -->
     <script src="/client.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>
-        یک آرزو بکن تا برآوردش کنم
-      </h1>
-    </header>
+    <div class="polcard">
+      <header>
+        <h1>
+          یک آرزو بکن تا برآوردش کنم
+        </h1>
+      </header>
 
-    <main>
-      <p class="bold">سلام،</p>
-      
-      <p>به من از امید آرزوت بگو:</p>
-      
-      <form>
-        <input name="dream" aria-label="a new dream" type="text" maxlength="100" placeholder="یک آرزو بنوسید">
-        <button type="submit" id="submit-dream">ارسال آرزو</button>
-      </form>
-      
-      <section class="dreams">
-        <ul id="dreams"></ul>
-        <button id="clear-dreams">
-          پاکردن آرزو
-        </button>
-      </section>
-      
-    </main>
+      <main>
+        <p class="bold polright">سلام،</p>
 
-    <footer>
-      Made with <a href="http://polnet.ir">POLNET.IR</a>!
-    </footer>
+        <p class="bold polright">به من از امید آرزوت بگو:</p>
+
+        <form>
+          <input
+            name="dream"
+            aria-label="a new dream"
+            type="text"
+            maxlength="100"
+            placeholder="یک آرزو بنوسید"
+          />
+          <button type="submit" id="submit-dream">ارسال آرزو</button>
+        </form>
+
+        <section class="dreams">
+          <ul id="dreams" class="polright"></ul>
+          <button id="clear-dreams">
+            پاکردن آرزو
+          </button>
+        </section>
+      </main>
+    </div>
+    <footer>Made with <a href="http://polnet.ir">POLNET.IR</a>!</footer>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
