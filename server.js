@@ -6,6 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const fs = require("fs");
+require('dotenv').config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -39,7 +40,7 @@ db.serialize(() => {
     console.log('Database "Dreams" ready to go!');
     db.each("SELECT * from Dreams", (err, row) => {
       if (row) {
-        console.log(`record: ${row.dream}`);
+        console.log(`record:${row.dream}--> ${row.name}-->${row.family}`);
       }
     });
   }
@@ -59,13 +60,15 @@ app.get("/getDreams", (request, response) => {
 
 // endpoint to add a dream to the database
 app.post("/addDream", (request, response) => {
-  console.log(`add to dreams ${request.body.dream}`);
+  console.log(`add to dreams ${request.body.dream} -  ${request.body.name}- ${request.body.family}`);
 
   // DISALLOW_WRITE is an ENV variable that gets reset for new projects
   // so they can write to the database
   if (!process.env.DISALLOW_WRITE) {
     const cleansedDream = cleanseString(request.body.dream);
-    db.run(`INSERT INTO Dreams (dream) VALUES (?)`, cleansedDream, error => {
+    const cleansedFamily = cleanseString(request.body.family);
+    const cleansedName = cleanseString(request.body.name);
+    db.run(`INSERT INTO Dreams (name,dream,family) VALUES (?,?,?)`, [cleansedDream,cleansedName,cleansedFamily] , error => {
       if (error) {
         response.send({ message: "error!" });
       } else {
@@ -106,6 +109,7 @@ const cleanseString = function(string) {
 };
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, () => {
-  console.log(`Your app is listening on port ${listener.address().port}`);
+const port = process.env.PORT || 8000;
+var listener = app.listen(port, () => {
+  console.log(`Your app is listening on port server: [${listener.address().port}]`);
 });
