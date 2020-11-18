@@ -63,7 +63,12 @@ button:active {
 }
 
 li {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
+	direction: rtl;
+	text-decoration: blue;
+	font-style: revert;
+	font-family: initial;
+	font-size: smaller;
 }
 
 footer {
