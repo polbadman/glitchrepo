@@ -25,7 +25,7 @@ fetch("/getDreams", {})
 // a helper function that creates a list item for a given dream
 const appendNewDream = dream => {
   const newListItem = document.createElement("li");
-  newListItem.innerText =dream.name+'='+ dream.dream +'-'+dream.family;
+  newListItem.innerText =dream.name+'='+ dream.family +'-'+ dream.dream;
   dreamsList.appendChild(newListItem);
 };
 
